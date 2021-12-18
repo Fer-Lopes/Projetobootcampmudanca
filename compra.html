@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Bootcamp</title>
+  <link rel="stylesheet" type="text/css" href="./styles/compra.css">
+</head>
+
+<body>
+  <header>
+    <h1 id="titulo">SITE DE MUDANÇAS</h1>
+  </header>
+  <div id="corpo">
+    <div id="textos">
+      <div id="textoPrincipal">
+        <h1 id="textopp">
+          Imóvel para Aquisição
+        </h1>
+      </div>
+      <div id="checklist">
+        <h3>
+          MÊS QUE ANTECEDE A MUDANÇA
+        </h3>
+        <div>
+          <input type="checkbox" onclick="ajustarProgresso()" name="scales">
+          <label for="scales"> 1. Contratação da transportadora </label>
+        </div>
+        <h3>
+          SEMANA QUE ANTECEDE A MUDANÇA
+        </h3>
+        <div>
+          <input type="checkbox" name="scales" onclick="ajustarProgresso()">
+          <label for="scales"> 2. Realizar a embalagem em caixas e/ou sacos plásticos com cuidado em proteger os objetos
+            com tem risco de quebrar com plástico bolha com identificação do cômodo e dos principais componentes e nível
+            de prioridade para abertura da caixa ou embalagem. </label>
+        </div>
+        <div>
+          <input type="checkbox" name="scales" onclick="ajustarProgresso()">
+          <label for="scales"> 3. Eliminação dos materiais que não estão sendo mais utilizado. </label>
+        </div>
+        <div>
+          <input type="checkbox" name="scales" onclick="ajustarProgresso()">
+          <label for="scales"> 4. Colocação de todos os materiais em local de facil acesso para retirado dos mesmos.
+          </label>
+        </div>
+        <div>
+          <input type="checkbox" name="scales" onclick="ajustarProgresso()">
+          <label for="scales"> 5.Desmontagem dos móveis que não são possíveis transportar montados. </label>
+        </div>
+        <h3>
+          DIA QUE ANTECEDE A MUDANÇA
+        </h3>
+        <div>
+          <input type="checkbox" name="scales" onclick="ajustarProgresso()">
+          <label for="scales"> 6.Retirada dos mantimentos e itens que estão na geladeira e armazenamento em
+            cooler.</label>
+        </div>
+        <h3>
+          DIA DA MUDANÇA
+        </h3>
+        <div>
+          <input type="checkbox" name="scales" onclick="ajustarProgresso()">
+          <label for="scales"> 7. Colocar a mobilía de acordo com cada cômodo. </label>
+        </div>
+        <div>
+          <input type="checkbox" name="scales" onclick="ajustarProgresso()">
+          <label for="scales"> 8. Realizar a montagem dos móveis.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="scales" onclick="ajustarProgresso()">
+          <label for="scales"> 9. Organizar os itens de acordo com cada cômodo.</label>
+        </div>
+      </div>
+      <a href="selecao.html">
+
+        <h3 id="botao">VOLTAR</h3>
+      </a>
+    </div>
+    <div id="progresso">
+      <div id="casinha">
+        <img src="2.jpg" />
+      </div>
+      <div id="barraProgresso">
+        <div id="aumentar">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+  function ajustarProgresso() {
+    const inputs = document.querySelectorAll('input')
+    const arrayInputs = Array.from(inputs)
+    let contverdadeiro = 0;
+    arrayInputs.map((input) => {
+      if (input.checked) {
+        contverdadeiro++
+      }
+    })
+    const progresso = document.getElementById("aumentar")
+    const porcentagem = 100 - (11.11 * contverdadeiro);
+    progresso.style = `min-height:${porcentagem}%;`
+  }
+</script>
